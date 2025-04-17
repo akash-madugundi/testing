@@ -1,105 +1,69 @@
-// badExample.js
+// smelly_code.js
+var globalVar1 = 10;
+let unusedGlobalVar = "hello";
+const anotherGlobal = 42;
 
-function doEverything(a, b, c, d, e, f, g, h) { // Too Many Parameters
-    console.log("Starting doEverything"); // Console Log Overuse
-    let temp1 = 5; // Magic Number
-    let temp2 = 5; // Duplicate Code
-    let unusedVar = "I'm not used"; // Unused Variable
+function longFunctionWithTooManyParams(a, b, c, d, e, f, g, h) {
+    var unusedLocalVar = 100;
+    let nestedValue = 1;
+    console.log("Start of long function"); console.log("Still going");
+    console.log("..."); console.log("...");
+    console.log("..."); console.log("..."); console.log("..."); console.log("...");
+    console.log("..."); console.log("..."); console.log("..."); console.log("...");
 
-    for (let i = 0; i < 5; i++) { // Magic Number
-        if (a > 0) {
-            if (b > 0) {
-                if (c > 0) {
-                    if (d > 0) { // Deep Nesting
-                        console.log("Deep inside if hell"); // Console Log Overuse
+    if (a > 10) {
+        if (b > 20) {
+            if (c > 30) {
+                if (d > 40) {
+                    if (e > 50) {
+                        nestedValue = 2;
                     }
                 }
             }
         }
     }
 
-    const user = getData().process().filter().map().sort().reverse().join("-"); // Long Chained Calls
+    let result = a + b + c + d + e + f + g + h + 999 + 123 + 456;
 
-    try {
-        riskyOperation();
-    } catch (err) { // Empty Catch Block
-    };
+    let snake_case_var = "snake";
+    let camelCaseVar = "camel";
 
-    let someNumber = 42; // Magic Number
+    let duplicated = a + b + c;
+    console.log(duplicated);
+    duplicated = a + b + c;
+    console.log(duplicated);
 
-    doSomethingAgain(a, b, c);
-    doSomethingAgain(a, b, c); // Duplicate Code
+    deeply.nested.object.chain().more().calls().are().here();
 
-    console.log("Done");;;;; // Unnecessary Semicolons
+    setTimeout(function() {
+        doSomething(function() {
+            setTimeout(function() {
+                anotherThing(function() {
+                    yetAnother(function() {
+                        console.log("callback hell");
+                    });
+                });
+            });
+        });
+    });
+
+    return result;
 }
 
-function doSomethingAgain(a, b, c) {
-    console.log("This is another function that repeats code"); // Console Log Overuse
-    let temp1 = 5; // Duplicate Code, Magic Number
-    console.log(temp1);
+function doSomething(cb) { cb(); }
+function anotherThing(cb) { cb(); }
+function yetAnother(cb) { cb(); }
+
+function shortFunction1() { console.log("dup1"); console.log("dup2"); console.log("dup3"); }
+function shortFunction2() { console.log("dup1"); console.log("dup2"); console.log("dup3"); }
+
+try {
+    someCode();
+} catch (e) {}
+
+;
+
+// filler to push line count past 300
+for (let i = 0; i < 250; i++) {
+    console.log("filler line", i); // minimal comments
 }
-
-function getData() {
-    return {
-        process: function () {
-            return {
-                filter: function () {
-                    return {
-                        map: function () {
-                            return {
-                                sort: function () {
-                                    return {
-                                        reverse: function () {
-                                            return {
-                                                join: function (s) {
-                                                    return "result" + s + "joined";
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    };
-}
-
-function riskyOperation() {
-    // No implementation
-}
-
-// callback hell
-function doAsyncStuff(cb) {
-    setTimeout(function () {
-        console.log("Step 1 done");
-        setTimeout(function () {
-            console.log("Step 2 done");
-            setTimeout(function () {
-                console.log("Step 3 done");
-                cb();
-            }, 1000);
-        }, 1000);
-    }, 1000);
-}
-
-// inconsistent naming
-let myVar = 10;
-let my_variable = 20;
-let MyVar = 30;
-let myvar = 40;
-
-/* This is the only comment in a massive file full of code */
-/* Low Comment Density */
-
-// Large File: Let's simulate it by adding lots of junk
-for (let i = 0; i < 300; i++) {
-    console.log("Spam " + i); // Console Log Overuse + Large File
-}
-
-doEverything(1, 2, 3, 4, 5, 6, 7, 8);
-doAsyncStuff(() => {
-    console.log("Async complete");
-});
