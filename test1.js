@@ -1,3 +1,3 @@
 // this is comment
-// commet 2
+// commet
 console.log("js");
