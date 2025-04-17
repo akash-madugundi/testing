@@ -1,0 +1,57 @@
+.regex-container {
+  margin-top: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+.regex-container h1 {
+  margin-top: 1rem;
+  color: #00BFFF;
+  text-align: center;
+}
+
+.regex-results {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding-top: 10px;
+  padding-left: 25px;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+.form-container {
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  margin: auto;
+}
+
+.form-box {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  flex-direction: column;
+}
+
+.field {
+  width: 47%;
+  height: 32px;
+  border-radius: 4px;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: 0.3s all;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.field:hover {
+  background-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
+}
+
+.regex-btn {
+  width: 30%;
+  font-size: 20px;
+}
+
+.regex-btn:hover {
+  color: rgb(255, 255, 255);
+  background-color: #00BFFF;
+  box-shadow: rgb(19 170 82 / 40%) 0px 2px 3px, rgb(195 231 202) 0px 0px 0px 3px;
+}
